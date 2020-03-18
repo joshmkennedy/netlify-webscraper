@@ -51,7 +51,7 @@ exports.handler = async (event, context) => {
     console.log(success("Browser Closed"));
     return {
       statusCode: 200,
-      body: url
+      body: JSON.stringify(news)
     };
   } catch (err) {
     // Catch and display errors
