@@ -7,13 +7,14 @@
     "cheerio": "^1.0.0-rc.3",
     "chrome-aws-lambda": "^2.1.1",
     "netlify-lambda": "^1.6.3",
+    "parcel": "^1.12.4",
     "puppeteer": "^2.1.1",
     "puppeteer-core": "^2.1.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
   },
   "scripts": {
-    "yarn build": "",
+    "build": "parcel build index.js",
     "postinstall": "netlify-lambda install"
   }
 }
