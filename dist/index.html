@@ -6,6 +6,26 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>hello</h1>
+    <h1>Scrape That Twitter Info</h1>
+    <form>
+      <input type="text" name="url" />
+      <button type="submit">Scrape</button>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        async function getData() {
+          const input = document.querySelector('input[name="url"]');
+          const res = await fetch("/api/webscrape", {
+            method: "POST",
+            body: JSON.stringify({ url: input.value })
+          });
+          const data = await res.json();
+          return data;
+        }
+        getData();
+      });
+    </script>
   </body>
 </html>
